@@ -2,45 +2,45 @@ package com.udacity.jwdnd.course1.cloudstorage.model;
 
 public class Note {
 
-    private Integer noteid, userid;
-    private String notetittle, notedescription ;
+    private Integer noteId, userId;
+    private String noteTitle, noteDescription;
 
-    public Note(Integer noteid, Integer userid, String notetittle, String notedescription) {
-        this.noteid = noteid;
-        this.userid = userid;
-        this.notetittle = notetittle;
-        this.notedescription = notedescription;
+    public Note(Integer noteId, Integer userId, String noteTitle, String noteDescription) {
+        this.noteId = noteId;
+        this.userId = userId;
+        this.noteTitle = noteTitle;
+        this.noteDescription = noteDescription;
     }
 
-    public Integer getNoteid() {
-        return noteid;
+    public Integer getNoteId() {
+        return noteId;
     }
 
-    public void setNoteid(Integer noteid) {
-        this.noteid = noteid;
+    public void setNoteId(Integer noteId) {
+        this.noteId = noteId;
     }
 
-    public Integer getUserid() {
-        return userid;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public String getNotetittle() {
-        return notetittle;
+    public String getNoteTitle() {
+        return noteTitle;
     }
 
-    public void setNotetittle(String notetittle) {
-        this.notetittle = notetittle;
+    public void setNoteTitle(String noteTitle) {
+        this.noteTitle = noteTitle;
     }
 
-    public String getNotedescription() {
-        return notedescription;
+    public String getNoteDescription() {
+        return noteDescription;
     }
 
-    public void setNotedescription(String notedescription) {
-        this.notedescription = notedescription;
+    public void setNoteDescription(String noteDescription) {
+        this.noteDescription = noteDescription;
     }
 }

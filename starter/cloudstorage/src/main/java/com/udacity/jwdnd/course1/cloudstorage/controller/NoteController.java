@@ -7,26 +7,26 @@ import com.udacity.jwdnd.course1.cloudstorage.services.NoteService;
 import com.udacity.jwdnd.course1.cloudstorage.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
-@RequestMapping("/home")
-public class HomeController {
+@RequestMapping("/note")
+public class NoteController {
 
     private NoteService noteService;
 
-    public HomeController(NoteService noteService) {
+    public NoteController(NoteService noteService, AuthenticationService authenticationService, UserService userService) {
         this.noteService = noteService;
     }
 
-    @GetMapping
-    public String homeView(Model model){
-        model.addAttribute("notes", noteService.getNotes());
-        System.out.println("here");
-        return  "home";
+    @PostMapping()
+    public RedirectView saveNote(@ModelAttribute Note note){
+        noteService.createNote(note);
+        return new RedirectView("home");
     }
+
 
 }

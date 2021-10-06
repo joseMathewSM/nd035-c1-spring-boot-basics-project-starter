@@ -22,28 +22,5 @@ public class LoginController {
     public String loginView(){
         return  "login";
     }
-
-    @PostMapping
-    public String loginUser(User user, Model model){
-        String errorMsg = null;
-        boolean validUser = false;
-
-        if(!userService.isUsernameAvailable(user.getUsername())){
-            validUser = userService.authenticateUser(user);
-        }else{
-            errorMsg = "User not present";
-        }
-
-        if(validUser){
-            model.addAttribute("loginSuccess",true);
-            return "home";
-        }else{
-            model.addAttribute("loginError", errorMsg);
-            System.out.println(errorMsg);
-            return "login";
-        }
-
-
-    }
-
 }
+

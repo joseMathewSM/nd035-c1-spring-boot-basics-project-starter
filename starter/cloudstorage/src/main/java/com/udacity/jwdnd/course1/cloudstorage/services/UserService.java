@@ -17,20 +17,12 @@ public class UserService {
         return userMapper.getUser(username) == null;
     }
 
+    public User getUserByUserName(String username){
+        return userMapper.getUser(username);
+    }
+
     public int createUser(User user) {
         return userMapper.insert(user);
     }
 
-    public boolean authenticateUser(User user) {
-        User dbUser = userMapper.getUser(user.getUsername());
-        boolean validUser = false;
-
-        if(dbUser!=null){
-            if(user.getPassword().equals(dbUser.getPassword())){
-                validUser = true;
-            }
-        }
-
-        return validUser;
-    }
 }
