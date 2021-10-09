@@ -25,7 +25,6 @@ public class HomeController {
     @GetMapping
     public String homeView(Model model){
         model.addAttribute("notes", noteService.getNotes());
-        System.out.println("here");
         return  "home";
     }
 

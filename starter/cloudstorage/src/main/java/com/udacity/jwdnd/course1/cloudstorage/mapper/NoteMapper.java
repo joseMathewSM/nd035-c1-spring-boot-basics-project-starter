@@ -15,9 +15,8 @@ public interface NoteMapper {
     @Select("SELECT * FROM NOTES WHERE userid = #{userid}")
     List<Note> getNotes(Integer userid);
 
-    @Insert("INSERT INTO NOTES (noteid, userid, notetitle, notedescription) VALUES(#{noteId}, #{userId}, #{noteTitle}, #{noteDescription})")
+    @Insert("INSERT INTO NOTES (noteid, userid, notehead, notedescription) VALUES(#{noteId},#{userId}, #{noteHead}, #{noteDescription})")
     @Options(useGeneratedKeys = true, keyProperty = "noteId")
     int insert(Note note);
-
 
 }
